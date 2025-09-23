@@ -235,6 +235,8 @@ pub mod polars {
 	use faer::Mat;
 	use polars::prelude::*;
 
+	pub extern crate polars;
+
 	pub trait Frame {
 		fn is_valid(self) -> PolarsResult<LazyFrame>;
 	}
@@ -655,7 +657,3 @@ pub extern crate numpy;
 #[cfg(feature = "numpy")]
 #[cfg_attr(docsrs, doc(cfg(feature = "numpy")))]
 pub extern crate pyo3;
-
-#[cfg(feature = "polars")]
-#[cfg_attr(docsrs, doc(cfg(feature = "polars")))]
-pub extern crate polars;
